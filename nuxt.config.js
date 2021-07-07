@@ -2,7 +2,11 @@ import colors from 'vuetify/es5/util/colors'
 require('dotenv').config()
 
 export default {
-  mode: 'spa',
+  // mode: 'spa',
+  pwa: {
+    icon: false // disables the icon module
+  },
+  ssr: true, // Disable Server Side rendering
   head: {
     // titleTemplate: '%s - ' + process.env.npm_package_name,
     title: 'Nuxt Project',
@@ -17,32 +21,16 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/image/icon.png' },
-      // {
-      //   href:
-      //     'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
-      //   rel: 'stylesheet'
-      // },
       {
         href:
           'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
         rel: 'stylesheet'
       }
-      // {
-      //   href: 'https://unpkg.com/element-ui/lib/theme-chalk/index.css',
-      //   rel: 'stylesheet'
-      // }
     ],
     script: [
       {
         src: '/js/GlobalHelper.js'
       }
-      // {
-      //   src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'
-      // },
-      // {
-      //   src:
-      //     'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
-      // }
     ]
   },
   /*
@@ -52,11 +40,14 @@ export default {
     color: '#fff' // Customize the progress-bar color
   },
   css: [
-    '@/assets/css/global/index.css',
-    'element-ui/lib/theme-chalk/index.css'
+    // '@/assets/css/global/index.css',
+    // 'element-ui/lib/theme-chalk/index.css'
+    'material-design-icons-iconfont/dist/material-design-icons.css',
+    'bootstrap/dist/css/bootstrap.css',
+    'bootstrap-vue/dist/bootstrap-vue-icons.min.css'
   ],
   plugins: [
-    '~/plugins/element-ui.js'
+    // '~/plugins/element-ui.js'
   ],
   buildModules: [
     '@nuxtjs/eslint-module', // https://github.com/nuxt-community/eslint-module
@@ -66,23 +57,13 @@ export default {
     '@nuxtjs/axios', // https://axios.nuxtjs.org/usage
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv', // https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/auth'
+    '@nuxtjs/auth',
+    'nuxt-material-design-icons-iconfont'
     // '@nuxtjs/vuetify'
   ],
   axios: {
     // https://axios.nuxtjs.org/options
     baseURL: process.env.BASE_URL || 'http://localhost:3000/'
-  },
-  auth: {
-    strategies: {
-      local: {
-        endpoints: {
-          login: { url: 'signin-admin', method: 'post', propertyName: 'token' },
-          user: { url: 'me', method: 'get', propertyName: '' },
-          logout: false
-        }
-      }
-    }
   },
   vuetify: {
     // https://github.com/nuxt-community/vuetify-module

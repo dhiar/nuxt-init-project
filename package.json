@@ -17,16 +17,14 @@
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
     "element-ui": "^2.13.2",
+    "gojs": "^2.1.44",
     "highlight.js": "^10.1.1",
     "human-date": "^1.4.0",
     "nuxt": "^2.0.0",
-    "quill-blot-formatter": "^1.0.5",
-    "quill-emoji": "^0.1.7",
-    "quill-image-uploader": "^1.2.2",
+    "nuxt-material-design-icons-iconfont": "^1.0.2",
     "sweetalert2": "^9.14.2",
-    "v-money": "^0.8.1",
-    "vue-currency-filter": "^5.1.0",
-    "vue-quill-editor": "^3.0.6"
+    "bootstrap": "^5.0.1",
+    "bootstrap-vue": "^2.21.2"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
