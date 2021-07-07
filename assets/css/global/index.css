@@ -1,0 +1,192 @@
+@import "./layout.css";
+@import "./element-ui.css";
+@import "./swal.css";
+@import "./page-list.css";
+@import "./dialog-detail.css";
+:root {
+    /* COLOR BOOSTRAP*/
+    --c-bootstrap-primary: #007bff;
+    --c-bootstrap-success: #28a745;
+    --c-bootstrap-warning: #ffc107;
+    --c-bootstrap-danger: #dc3545;
+    --c-bootstrap-info: #17a2b8;
+    --c-bootstrap-indigo: #6610f2;
+    --c-bootstrap-purple: #6f42c1;
+    --c-bootstrap-pink: #e83e8c;
+    --c-bootstrap-orange: #fd7e14;
+    --c-bootstrap-teal: #20c997;
+    /* COLOR */
+    --c-input-theme: #6f42c1;
+    --c-content-title: #171725;
+    --c-purple: #665eff;
+    --c-table-header: #f1f1f5;
+    --c-red-light: #fc5a5a;
+    --c-green-light: #3dd598;
+    --c-semi-black: #696974;
+    /* BG COLOR */
+    --c-bg-purple: rgba(102, 94, 255, 0.1);
+    --c-bg-winner: #fff9e4;
+    /* FONT-SIZE */
+    --fs-content-title: 1.5em;
+    --fs-content-title-info: 0.7em;
+}
+
+/* G E N E R A L */
+
+.g-input-ex {
+    font-size: small;
+    font-style: italic;
+}
+
+.g-bold {
+    font-weight: bold;
+}
+
+.g-loading-page {
+    font-size: 2em;
+    text-align: center;
+}
+
+.g-only-change-pass {
+    font-style: italic;
+    line-height: 25px !important;
+}
+
+.g-loading-save {
+    /* font-size: 1.5em; */
+    font-weight: bold;
+    color: white;
+}
+
+.g-btn-purple {
+    background-color: var(--c-purple) !important;
+    border-color: var(--c-purple) !important;
+    color: white !important;
+}
+
+.g-btn-purple:hover {
+    background-color: var(--c-purple) !important;
+    border-color: var(--c-purple) !important;
+    color: white !important;
+    opacity: 0.9;
+}
+
+.g-btn-back-purple {
+    font-weight: bold;
+    border-color: var(--c-purple) !important;
+    color: var(--c-purple) !important;
+}
+
+.g-padding-0 {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.g-sub-page-title {
+    vertical-align: middle;
+    margin-left: 0.5em;
+    color: var(--c-content-title);
+    font-size: var(--fs-content-title);
+    font-weight: bold;
+}
+
+.g-sub-page-title-info {
+    font-weight: normal;
+    font-size: var(--fs-content-title-info);
+}
+
+.custom-money {
+    -webkit-appearance: none !important;
+    background-color: #fff !important;
+    background-image: none !important;
+    border-radius: 4px !important;
+    border: 1px solid #dcdfe6 !important;
+    box-sizing: border-box !important;
+    color: #606266 !important;
+    display: inline-block !important;
+    font-size: inherit !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    outline: none !important;
+    padding: 0 15px !important;
+    transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+    width: 100% !important;
+}
+
+/* SINGE FILE UPLOAD */
+
+input[type='file'] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.g-su-container {
+    font-family: 'Arial';
+    background-color: #f2f2f2;
+    /* border: 2px dashed var(--c-purple); */
+    border: 2px dashed var(--c-bootstrap-purple);
+    border-radius: 2px;
+    height: 100%;
+    width: 100%;
+    max-height: 500px;
+    min-height: 150px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.g-su-upload-area {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.g-su-img-area {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.g-su-btn {
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 15px 35px;
+    position: relative;
+}
+
+.g-su-btn-upload {
+    background-color: var(--c-bg-purple);
+    /* color: var(--c-purple); */
+    color: var(--c-bootstrap-purple);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.g-su-btn-remove {
+    padding: 5px 20px !important;
+    border-radius: 15px;
+    background-color: #d3394c !important;
+}
+
+.g-su-btn-remove:hover {
+    background-color: #722040;
+}
+
+.g-su-img {
+    border: 1px solid #f6f6f6;
+    display: inline-block;
+    max-height: calc(500px - 80px);
+    max-width: 90%;
+    width: auto;
+    position: relative;
+}
+
+/* SINGE FILE UPLOAD  END */

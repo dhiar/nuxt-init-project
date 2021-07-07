@@ -1,0 +1,20 @@
+.g-layout {
+    min-height: 100% !important;
+    background-color: #fafafb !important;
+    /* border-top: solid 1px var(--c-purple); */
+    /* border-left: solid 3px var(--c-purple); */
+}
+
+.g-layout-content {
+    background-color: #fafafb;
+}
+
+.g-layout-v-continer {
+    max-width: unset !important;
+    width: 90% !important;
+}
+
+.g-active-menu {
+    font-weight: bold !important;
+    border-left: solid 0.7em var(--c-bootstrap-purple);
+}

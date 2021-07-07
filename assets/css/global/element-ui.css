@@ -1,0 +1,240 @@
+/* 
+    O R I G I N A L   S T A R T
+*/
+
+/* # FORM */
+
+.el-form-item__label {
+    padding: unset !important;
+}
+
+/* # TABLE */
+
+.el-table .cell {
+    word-break: break-word !important;
+}
+
+.el-table__header th {
+    background-color: var( --c-table-header) !important;
+}
+
+.el-table__header thead {
+    border-radius: 10px !important;
+}
+
+.el-table td {
+    padding-bottom: 1.35em !important;
+}
+
+/* # PAGINATION */
+
+.el-pagination button.btn-prev, .el-pagination button.btn-next {
+    font-size: 17px !important;
+}
+
+.el-pagination button.btn-prev:hover, .el-pagination button.btn-next:hover, .el-pager li:hover {
+    color: var(--c-bootstrap-purple) !important;
+}
+
+.el-pager li.active {
+    color: var(--c-bootstrap-purple) !important;
+    font-size: 17px !important;
+    font-weight: bold !important;
+    border-bottom: solid 2px var(--c-bootstrap-purple) !important;
+}
+
+/* # DISABLE input & text-area */
+
+.el-textarea.is-disabled .el-textarea__inner, .el-input.is-disabled .el-input__inner {
+    color: var(--c-semi-black) !important;
+}
+
+/* # HIDE arrow icon on datetime (el-date-picker) */
+
+.popper__arrow {
+    position: unset !important;
+    border-style: unset !important;
+}
+
+/* 
+        C U S T O M   S T A R T
+*/
+
+/* # BUTTON ACTION */
+
+.btn-action [class^='el-icon-'] {
+    font-size: 1.3em !important;
+}
+
+.el-button--small {
+    padding: 7px 10px !important;
+}
+
+button.el-button[title-edit]:hover:after {
+    content: attr(title-edit);
+    position: absolute;
+    margin-top: 1.85em;
+    margin-left: -1.2em;
+    background-color: var(--c-bg-purple) !important;
+    color: var(--c-content-title);
+    font-size: 1.2em !important;
+}
+
+button.el-button[title-remove]:hover:after {
+    content: attr(title-remove);
+    position: absolute;
+    margin-top: 1.85em;
+    margin-left: -1.8em;
+    background-color: var(--c-bg-purple) !important;
+    color: var(--c-content-title);
+    font-size: 1.2em !important;
+}
+
+button.el-button[title-detail]:hover:after {
+    content: attr(title-detail);
+    position: absolute;
+    margin-top: 1.85em;
+    margin-left: -1.7em;
+    background-color: var(--c-bg-purple) !important;
+    color: var(--c-content-title);
+    font-size: 1.2em !important;
+}
+
+button.el-button[title-speed]:hover:after {
+    content: attr(title-speed);
+    position: absolute;
+    margin-top: 1.85em;
+    margin-left: -1.7em;
+    background-color: var(--c-bg-purple) !important;
+    color: var(--c-content-title);
+    font-size: 1.2em !important;
+}
+
+button.el-button[title-accuracy]:hover:after {
+    content: attr(title-accuracy);
+    position: absolute;
+    margin-top: 1.85em;
+    margin-left: -2.5em;
+    background-color: var(--c-bg-purple) !important;
+    color: var(--c-content-title);
+    font-size: 1.2em !important;
+}
+
+button.el-button[title-distance]:hover:after {
+    content: attr(title-distance);
+    position: absolute;
+    margin-top: 1.85em;
+    margin-left: -2.7em;
+    background-color: var(--c-bg-purple) !important;
+    color: var(--c-content-title);
+    font-size: 1.2em !important;
+}
+
+button.el-button[title-complaint]:hover:after {
+    content: attr(title-complaint);
+    position: absolute;
+    margin-top: 1.85em;
+    margin-left: -2.8em;
+    background-color: var(--c-bg-purple) !important;
+    color: var(--c-content-title);
+    font-size: 1.2em !important;
+}
+
+button.el-button[title-admin]:hover:after {
+    content: attr(title-admin);
+    position: absolute;
+    margin-top: 1.85em;
+    margin-left: -1.75em;
+    background-color: var(--c-bg-purple) !important;
+    color: var(--c-content-title);
+    font-size: 1.2em !important;
+}
+
+button.el-button[title-event]:hover:after {
+    content: attr(title-event);
+    position: absolute;
+    margin-top: 1.85em;
+    margin-left: -1.55em;
+    background-color: var(--c-bg-purple) !important;
+    color: var(--c-content-title);
+    font-size: 1.2em !important;
+}
+
+button.el-button[title-section-event]:hover:after {
+    content: attr(title-section-event);
+    position: absolute;
+    margin-top: 1.85em;
+    margin-left: -3.1em;
+    background-color: var(--c-bg-purple) !important;
+    color: var(--c-content-title);
+    font-size: 1.2em !important;
+}
+
+button.el-button[title-sponsor]:hover:after {
+    content: attr(title-sponsor);
+    position: absolute;
+    margin-top: 1.85em;
+    margin-left: -2.4em;
+    background-color: var(--c-bg-purple) !important;
+    color: var(--c-content-title);
+    font-size: 1.2em !important;
+}
+
+button.el-button[title-sponsor-item]:hover:after {
+    content: attr(title-sponsor-item);
+    position: absolute;
+    margin-top: 1.85em;
+    margin-left: -2.2em;
+    background-color: var(--c-bg-purple) !important;
+    color: var(--c-content-title);
+    font-size: 1.2em !important;
+}
+
+button.el-button[title-promotion]:hover:after {
+    content: attr(title-promotion);
+    position: absolute;
+    margin-top: 1.85em;
+    margin-left: -2.2em;
+    background-color: var(--c-bg-purple) !important;
+    color: var(--c-content-title);
+    font-size: 1.2em !important;
+}
+
+button.el-button[title-transaction]:hover:after {
+    content: attr(title-transaction);
+    position: absolute;
+    margin-top: 1.85em;
+    margin-left: -2.85em;
+    background-color: var(--c-bg-purple) !important;
+    color: var(--c-content-title);
+    font-size: 1.2em !important;
+}
+
+button.el-button[title-input-resi]:hover:after {
+    content: attr(title-input-resi);
+    position: absolute;
+    margin-top: 1.85em;
+    margin-left: -3em;
+    background-color: var(--c-bg-purple) !important;
+    color: var(--c-content-title);
+    font-size: 1.2em !important;
+}
+
+/* # ERROR on quill-editor */
+
+.el-fix .el-form-item__content {
+    line-height: unset !important;
+}
+
+.el-fix .el-form-item__content {
+    line-height: unset !important;
+    /* background-color: green; */
+    margin-top: -25px;
+    padding-top: 0px;
+}
+
+/* Error x-arrow on select option on dialog */
+
+.el-popper .popper__arrow, .el-popper .popper__arrow::after {
+    display: none !important;
+}

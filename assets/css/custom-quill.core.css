@@ -1,0 +1,184 @@
+/* MAIN */
+
+@import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fondamento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+.c-ql-editor {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.ql-editor {
+    /* background-color: yellow; */
+    min-height: 20em;
+}
+
+#emoji-palette {
+    /* width 70% */
+    border: unset !important;
+    left: calc(50% - (70% / 2)) !important;
+    top: 0 !important;
+    max-width: 70% !important;
+}
+
+#emoji-palette ul {
+    list-style-type: none !important;
+}
+
+.ql-editor ul>li::before {
+    content: unset !important;
+}
+
+.ql-tooltip[data-mode='video'], .ql-editing[data-mode='video'] {
+    /* width 319 */
+    left: calc(50% - 157px) !important;
+    margin-top: -1em !important;
+}
+
+.ql-tooltip[data-mode='link'], .ql-editing[data-mode='link'] {
+    /* width 319 */
+    left: calc(50% - 157px) !important;
+    margin-top: -1em !important;
+}
+
+/* Blot Formater */
+
+/* .blot-formatter__toolbar-button {
+  display: none !important;
+} */
+
+/* Font Size */
+
+.ql-picker-item[data-value='10px']::before, .ql-picker-label[data-value='10px']::before {
+    content: '10px' !important;
+}
+
+.ql-picker-item[data-value='12px']::before, .ql-picker-label[data-value='12px']::before {
+    content: '12px' !important;
+}
+
+.ql-picker-item[data-value='14px']::before, .ql-picker-label[data-value='14px']::before {
+    content: '14px' !important;
+}
+
+.ql-picker-item[data-value='16px']::before, .ql-picker-label[data-value='16px']::before {
+    content: '16px' !important;
+}
+
+.ql-picker-item[data-value='18px']::before, .ql-picker-label[data-value='18px']::before {
+    content: '18px' !important;
+}
+
+.ql-picker-item[data-value='20px']::before, .ql-picker-label[data-value='20px']::before {
+    content: '20px' !important;
+}
+
+.ql-picker-item[data-value='24px']::before, .ql-picker-label[data-value='24px']::before {
+    content: '24px' !important;
+}
+
+.ql-picker-item[data-value='30px']::before, .ql-picker-label[data-value='30px']::before {
+    content: '30px' !important;
+}
+
+.ql-picker-item[data-value='32px']::before, .ql-picker-label[data-value='32px']::before {
+    content: '32px' !important;
+}
+
+.ql-picker-item[data-value='36px']::before, .ql-picker-label[data-value='36px']::before {
+    content: '36px' !important;
+}
+
+/* Font Family */
+
+.ql-picker-item[data-value='times_new_roman']::before, .ql-picker-label[data-value='times_new_roman']::before {
+    content: 'Times New Roman' !important;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.ql-editor .ql-font-times_new_roman {
+    font-family: "Times New Roman", Times, serif;
+}
+
+.ql-picker-item[data-value='arial']::before, .ql-picker-label[data-value='arial']::before {
+    content: 'Arial' !important;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ql-editor .ql-font-arial {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ql-picker-item[data-value='serif']::before, .ql-picker-label[data-value='serif']::before {
+    content: 'Serif' !important;
+    font-family: Georgia, Times New Roman, serif;
+}
+
+.ql-editor .ql-font-serif {
+    font-family: Georgia, Times New Roman, serif;
+}
+
+.ql-picker-item[data-value='monospace']::before, .ql-picker-label[data-value='monospace']::before {
+    content: 'Monospace' !important;
+    font-family: Monaco, Courier New, monospace;
+}
+
+.ql-editor .ql-font-monospace {
+    font-family: Monaco, Courier New, monospace;
+}
+
+.ql-picker-item[data-value='mirza']::before, .ql-picker-label[data-value='mirza']::before {
+    content: 'Mirza' !important;
+    font-family: 'Mirza';
+}
+
+.ql-editor .ql-font-mirza {
+    font-family: 'Mirza' !important;
+}
+
+.ql-picker-item[data-value='roboto']::before, .ql-picker-label[data-value='roboto']::before {
+    content: 'Roboto' !important;
+    font-family: 'Roboto';
+}
+
+.ql-editor .ql-font-roboto {
+    font-family: 'Roboto' !important;
+}
+
+.ql-picker-item[data-value='grenze_gotisch']::before, .ql-picker-label[data-value='grenze_gotisch']::before {
+    content: 'Grenze Gotisch' !important;
+    font-family: 'Grenze Gotisch', cursive;
+}
+
+.ql-editor .ql-font-grenze_gotisch {
+    font-family: 'Grenze Gotisch', cursive;
+}
+
+.ql-picker-item[data-value='ubuntu']::before, .ql-picker-label[data-value='ubuntu']::before {
+    content: 'Ubuntu' !important;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.ql-editor .ql-font-ubuntu {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.ql-picker-item[data-value='fondamento']::before, .ql-picker-label[data-value='fondamento']::before {
+    content: 'Fondamento' !important;
+    font-family: 'Fondamento', cursive;
+}
+
+.ql-editor .ql-font-fondamento {
+    font-family: 'Fondamento', cursive;
+}
+
+.ql-picker-item[data-value='playfair']::before, .ql-picker-label[data-value='playfair']::before {
+    content: 'Playfair Display' !important;
+    font-family: 'Playfair Display', serif;
+}
+
+.ql-editor .ql-font-playfair {
+    font-family: 'Playfair Display', serif;
+}

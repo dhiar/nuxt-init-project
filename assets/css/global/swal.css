@@ -1,0 +1,12 @@
+.swal2-styled.swal2-confirm {
+    background-color: var(--c-purple) !important;
+    border-color: var(--c-purple) !important;
+    color: white !important;
+}
+
+.swal2-styled.swal2-confirm:hover {
+    background-color: var(--c-purple) !important;
+    border-color: var(--c-purple) !important;
+    color: white !important;
+    opacity: 0.9;
+}
