@@ -74,11 +74,11 @@
 						"
 					></div>
 					<v-dialog v-model="dialog" persistent max-width="500px">
+						{{ dataFileInput.file_path }}
 						<!--  -->
 						<v-card>
 							<v-toolbar color="success" dark
 								><h4>Properties</h4>
-                {{ 'key :' + currentKey + JSON.stringify(dataFileInput) }}
 								<v-spacer></v-spacer>
 								<v-btn icon dark @click="dialog = false">
 									<v-icon>mdi-close</v-icon>
@@ -173,19 +173,18 @@
 <script>
 import go from "gojs";
 import Layers from "./layers.vue";
+import PROPERTY, {INIT_PROPERTY} from '@/constants/FileInput.js';
+
 
 export default {
 	name: "diagram1",
 	components: { Layers },
 	data: () => ({
+		PROPERTY : PROPERTY,
+		// INIT_PROPERTY: INIT_PROPERTY,
     // add by dhiar
     currentKey: "",
-    dataFileInput: {
-      file_path: "",
-      input_path: "",
-      header: false,
-      delimiter: "|",
-    },
+		dataFileInput: INIT_PROPERTY,
 		dialog: false,
 		dialogclose: false,
 		dialoglayer: false,
@@ -241,7 +240,7 @@ export default {
 	computed: {
 		scrollbarTheme() {
 			return this.$vuetify.theme.dark ? "dark" : "light";
-		},
+		}
 	},
 
 	mounted() {
@@ -429,7 +428,7 @@ export default {
 						{
 							text: "File Input",
 							category: "ReadFile",
-							img: "/read_file.png",
+							img: "/images/read_file.png", // path static
 							delimiter: "|",
 						},
 						{
@@ -454,17 +453,7 @@ export default {
 				),
 			}
 		);
-		// function save() {
-		//   var json = JSON.parse(myDiagram.model.toJson());
-		//   document.getElementById("GraphLinksModel").value = JSON.stringify(json.nodeDataArray, null, '');
-		//   console.log(json)
-		// }
-		// function load() {
-		//     myDiagram.model = go.Model.fromJson(document.getElementById("GraphLinksModel").value);
-		//     var pos = myDiagram.model.modelData.position;
-		//     if (pos) myDiagram.initialPosition = go.Point.parse(pos);
-		// }
-	}, //mounted
+	},
 	methods: {
     // created by dhiar
     dcmodel() {
@@ -499,9 +488,9 @@ export default {
               console.log('node = ' + node)
               console.log('nodeData = ' + JSON.stringify(nodeData))
 
-              // dhiar. Bisa dibuat untuk value dari node yang lain sesuai keperluan.
+              // Bisa re-usable untuk node yang lain sesuai keperluan.
               self.currentKey = nodeData.key
-							self.inputDataFileInput(nodeData)
+							self.inputDataFileInput(nodeData, self.PROPERTY)
             }
 
 						e.diagram.startTransaction("Toogle Input");
@@ -512,7 +501,6 @@ export default {
 		},
     save() {
       const self = this
-      
       // document.getElementById("GraphLinksModel").value = self.myDiagram.model.toJson()
       
       // let model = self.myDiagram.model;
@@ -525,44 +513,35 @@ export default {
 			console.log('currentNode.data = ' + JSON.stringify(currentNode))
 
 			if (currentNode.category == 'ReadFile') {
+
 				// bila ingin code nya lebih ringkas, pakai looping saja
-				self.myDiagram.model.setDataProperty(currentNode, "file_path", self.dataFileInput.file_path);
-				self.myDiagram.model.setDataProperty(currentNode, "input_path", self.dataFileInput.input_path);
-				self.myDiagram.model.setDataProperty(currentNode, "header", self.dataFileInput.header);
-				self.myDiagram.model.setDataProperty(currentNode, "delimiter", self.dataFileInput.delimiter);
+				Object.entries(self.dataFileInput).forEach(([key, value]) => {
+						console.log(`${key} ${value}`);
+						self.myDiagram.model.setDataProperty(currentNode,key, value);
+				});
+				// self.myDiagram.model.setDataProperty(currentNode, "file_path", self.dataFileInput.file_path);
+				// self.myDiagram.model.setDataProperty(currentNode, "input_path", self.dataFileInput.input_path);
+				// self.myDiagram.model.setDataProperty(currentNode, "header", self.dataFileInput.header);
+				// self.myDiagram.model.setDataProperty(currentNode, "delimiter", self.dataFileInput.delimiter);
 
 				// reset data
-				self.resetDataFileInput()
+				self.resetDataNode(self.dataFileInput, self.PROPERTY)
 			}
 
       self.myDiagram.model.commitTransaction("added Node and Link");
-
-      console.log('save' + self.myDiagram.model.toJson())
 		},
-		resetDataFileInput(){
-			// bila ingin ringkas, gunakan looping saja. Kemudian buat global function,
-			// supaya bisa digunakan di tempat lain, misalnya di taruh di file globalFunction.js
+		resetDataNode(dataNode, PROPERTY){
 			const self = this
-			self.dataFileInput = {
-				file_path: "",
-				input_path: "",
-				header: false,
-				delimiter: "|",
-			}
+			Object.entries(PROPERTY).forEach(([key, value]) => {
+					dataNode[key] = value
+			});
 		},
-		inputDataFileInput(data){
+		inputDataFileInput(dataNode){
 			const self = this
-			// bila ingin ringkas, gunakan looping saja. Kemudian buat global function,
-			// supaya bisa digunakan di tempat lain, misalnya di taruh di file globalFunction.js
-			self.dataFileInput = {
-				file_path: data.file_path ?? "<Isi isi data file path>", // menggunakan ternary operator, jadi, jika data kosong/null diisi dengan default-value
-				input_path: data.input_path ?? "<Silakan isi data input path>",
-				header: data.header ?? true,
-				delimiter: data.delimiter ?? "|",
-			}
+			Object.entries(self.PROPERTY).forEach(([key, value]) => {
+				self.dataFileInput[key] = dataNode[key] ?? value
+			});
 		},
 	},
 };
 </script>
-
-<style></style>

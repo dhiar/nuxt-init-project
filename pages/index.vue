@@ -1,38 +1,46 @@
 <template>
-  <div>
-    <v-app>
-      INDEX
-    </v-app>
-  </div>
-</template>
-<script>
-import Navbar from '@/components/Navbar'
-export default {
-  layout: 'dashboard',
-  components: {
-    // Navbar
-  },
-  data() {
-    return {
-      //
-    }
-  },
-  computed: {
-    //
-  },
-  watch: {
-    //
-  },
-  created() {
-    //
-  },
-  mounted() {
-    // this.$router.push('/login')
-  },
-  methods: {
-    //
-  }
-}
-</script>
+	<div class="dashboard">
+		<v-container mt-4>
+			<v-layout row wrap>
+				<v-flex sm6 xs12 md6 lg3>
+					<v-card class="rounded-lg ma-3" width="160">
+						<v-img center>
+							<img src="~assets/images/imagedata.png" width="160" alt="" />
+						</v-img>
+					</v-card>
+				</v-flex>
 
-<style scoped></style>
+				<v-flex sm6 xs12 md6 lg3>
+					<v-card class="rounded-lg ma-3" width="160" rounded>
+						<v-img center>
+							<img src="~assets/images/imageGraph.png" width="160" alt="" />
+						</v-img>
+					</v-card>
+				</v-flex>
+
+				<v-flex sm6 xs12 md6 lg3>
+					<v-card class="rounded-lg ma-3" width="160" rounded>
+						<v-img center>
+							<img src="~assets/images/imageGraph.png" width="160" alt="" />
+						</v-img>
+					</v-card>
+				</v-flex>
+			</v-layout>
+
+			<v-flex xs12 sm6 md4 lg3 mt-8>
+				<v-btn small to="/actionhistory" class="ma-2" outlined color="#05A971">
+					Action History
+				</v-btn>
+			</v-flex>
+		</v-container>
+	</div>
+</template>
+
+<script>
+export default {
+	layout: "dashboard",
+	data() {
+		return {};
+	},
+};
+</script>

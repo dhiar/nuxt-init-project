@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-@import '../assets/common.scss';
+@import '~assets/common.scss';
 .sidebar-card{
     width: 350px;
     margin: 0px 5px;
